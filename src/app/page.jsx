@@ -1,12 +1,14 @@
 "use client";
-import Input from "./components/Input";
-import Todo from "./components/Todo";
+import { useAdd } from "@/app/hooks/useAdd";
+import Input from "@/app/components/Input";
+import Todo from "@/app/components/Todo";
 
 export default function Home() {
+  const add = useAdd();
   return (
     <>
-      <Input />
-      <Todo />
+      <Input {...add} />
+      <Todo {...add} />
     </>
   );
 }
